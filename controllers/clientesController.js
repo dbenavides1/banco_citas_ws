@@ -29,7 +29,16 @@ module.exports = {
     getById(req, res) {
         console.log(req.params.id);
         return clientes
-            .findByPk(req.params.id)
+            .findByPk(req.params.id, {
+                include: [
+                    {
+                        model: citas
+                    },
+                    {
+                        model: pqrs
+                    }
+                ]
+            })
             .then((clientes) => {
                 console.log(clientes);
                 if (!clientes) {

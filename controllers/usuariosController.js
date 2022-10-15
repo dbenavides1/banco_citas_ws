@@ -23,7 +23,13 @@ module.exports = {
     getById(req, res) {
         console.log(req.params.id);
         return usuarios
-            .findByPk(req.params.id)
+            .findByPk(req.params.id, {
+                include: [
+                    {
+                        model: citas
+                    }
+                ]
+            })
             .then((usuarios) => {
                 console.log(usuarios);
                 if (!usuarios) {
