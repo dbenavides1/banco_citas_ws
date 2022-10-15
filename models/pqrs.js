@@ -4,7 +4,7 @@ const {
 
 module.exports = sequelize => {
   const attributes = {
-    idPqrs: {
+    id_pqrs: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
@@ -13,7 +13,7 @@ module.exports = sequelize => {
       field: "id_pqrs",
       autoIncrement: true
     },
-    idClie: {
+    id_clie: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
@@ -44,7 +44,7 @@ module.exports = sequelize => {
       field: "estado",
       autoIncrement: false
     },
-    fecReg: {
+    fec_reg: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),

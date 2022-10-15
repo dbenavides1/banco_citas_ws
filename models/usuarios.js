@@ -4,7 +4,7 @@ const {
 
 module.exports = sequelize => {
   const attributes = {
-    idUsu: {
+    id_usu: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
@@ -31,7 +31,7 @@ module.exports = sequelize => {
       field: "apellidos",
       autoIncrement: false
     },
-    tipoDni: {
+    tipo_dni: {
       type: DataTypes.CHAR(100),
       allowNull: true,
       defaultValue: null,
@@ -85,7 +85,7 @@ module.exports = sequelize => {
       field: "tel",
       autoIncrement: false
     },
-    fecNac: {
+    fec_nac: {
       type: DataTypes.DATEONLY,
       allowNull: true,
       defaultValue: null,
@@ -121,7 +121,7 @@ module.exports = sequelize => {
       field: "rol",
       autoIncrement: false
     },
-    fecReg: {
+    fec_reg: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),

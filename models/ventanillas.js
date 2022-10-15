@@ -4,7 +4,7 @@ const {
 
 module.exports = sequelize => {
   const attributes = {
-    idVentanilla: {
+    id_ventanilla: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
@@ -13,7 +13,7 @@ module.exports = sequelize => {
       field: "id_ventanilla",
       autoIncrement: true
     },
-    nomVentanilla: {
+    nom_ventanilla: {
       type: DataTypes.CHAR(255),
       allowNull: false,
       defaultValue: null,

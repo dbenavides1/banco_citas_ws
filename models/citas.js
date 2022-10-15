@@ -4,7 +4,7 @@ const {
 
 module.exports = sequelize => {
   const attributes = {
-    idClie: {
+    id_clie: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
@@ -17,7 +17,7 @@ module.exports = sequelize => {
         model: "clientesModel"
       }
     },
-    idUsu: {
+    id_usu: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
@@ -30,7 +30,7 @@ module.exports = sequelize => {
         model: "usuariosModel"
       }
     },
-    idVentanilla: {
+    id_ventanilla: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
@@ -43,7 +43,7 @@ module.exports = sequelize => {
         model: "ventanillasModel"
       }
     },
-    fecCita: {
+    fec_cita: {
       type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: null,
@@ -70,7 +70,7 @@ module.exports = sequelize => {
       field: "estado",
       autoIncrement: false
     },
-    fecReg: {
+    fec_reg: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
@@ -79,7 +79,7 @@ module.exports = sequelize => {
       field: "fec_reg",
       autoIncrement: false
     },
-    idCita: {
+    id_cita: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: null,
