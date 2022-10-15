@@ -105,6 +105,12 @@ module.exports = sequelize => {
     CitasModel.belongsTo(models.clientesModel, {
       foreignKey: 'id_clie'
     });
+    CitasModel.belongsTo(models.usuariosModel, {
+      foreignKey: 'id_usu'
+    });
+    CitasModel.belongsTo(models.ventanillasModel, {
+      foreignKey: 'id_ventanilla'
+    });
   };
 
   return CitasModel;

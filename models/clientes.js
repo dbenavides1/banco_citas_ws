@@ -138,6 +138,9 @@ module.exports = sequelize => {
     ClientesModel.hasMany(models.citasModel, {
       foreignKey: 'id_clie'
     });
+    ClientesModel.hasMany(models.pqrsModel, {
+      foreignKey: 'id_clie'
+    });
   };
 
   return ClientesModel;

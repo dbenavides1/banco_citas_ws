@@ -10,69 +10,73 @@ module.exports = {
 
     getById(req, res) {
         console.log(req.params.id);
-        return cita
+        return citas
             .findByPk(req.params.id)
-            .then((cita) => {
-                console.log(cita);
-                if (!cita) {
+            .then((citas) => {
+                console.log(citas);
+                if (!citas) {
                     return res.status(404).send({
                         message: 'Data Not Found',
                     });
                 }
-                return res.status(200).send(cita);
+                return res.status(200).send(citas);
             })
             .catch((error) =>
                 res.status(400).send(error));
     },
-    /*
+    
     add(req, res) {
-        return cita
+        return citas
             .create({
-                title: req.body.title,
-                description: req.body.description,
-                state: req.body.state
+                id_clie: req.body.id_clie,
+                id_usu: req.body.id_usu,
+                id_ventanilla: req.body.id_ventanilla,
+                fec_cita: req.body.fec_cita,
+                hora: req.body.hora,
+                estado: req.body.estado
             })
-            .then((cita) => res.status(201).send(cita))
+            .then((citas) => res.status(201).send(citas))
             .catch((error) => res.status(400).send(error));
     },
-
+    
     update(req, res) {
-        return cita
+        return citas
             .findByPk(req.params.id)
-            .then(cita => {
-                if (!cita) {
+            .then(citas => {
+                if (!citas) {
                     return res.status(404).send({
                         message: 'cita Not Found',
                     });
                 }
-                return cita
+                return citas
                     .update({
-                        title: req.body.title || cita.title,
-                        description: req.body.description || cita.description,
-                        state: req.body.state || cita.state
+                        id_clie: req.body.id_clie || citas.id_clie,
+                        id_usu: req.body.id_usu || citas.id_usu,
+                        id_ventanilla: req.body.id_ventanilla || citas.id_ventanilla,
+                        fec_cita: req.body.fec_cita || citas.fec_cita,
+                        hora: req.body.hora || citas.hora,
+                        estado: req.body.estado || citas.estado
                     })
-                    .then(() => res.status(200).send(cita))
+                    .then(() => res.status(200).send(citas))
                     .catch((error) => res.status(400).send(error));
             })
             .catch((error) => res.status(400).send(error));
     },
-
+    
     delete(req, res) {
-        return cita
+        return citas
             .findByPk(req.params.id)
-            .then(cita => {
-                if (!cita) {
+            .then(citas => {
+                if (!citas) {
                     return res.status(400).send({
                         message: 'cita Not Found',
                     });
                 }
-                return cita
+                return citas
                     .destroy()
                     .then(() => res.status(204).send())
                     .catch((error) => res.status(400).send(error));
             })
             .catch((error) => res.status(400).send(error));
     }
-    */
-
 }

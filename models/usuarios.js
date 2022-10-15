@@ -140,6 +140,14 @@ module.exports = sequelize => {
     freezeTableName: true,
     schema: 'public'
   };
+
   const UsuariosModel = sequelize.define("usuariosModel", attributes, options);
+
+  UsuariosModel.associate = function (models) {
+    UsuariosModel.hasMany(models.citasModel, {
+      foreignKey: 'id_usu'
+    });
+  };
+
   return UsuariosModel;
 };

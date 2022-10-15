@@ -63,6 +63,14 @@ module.exports = sequelize => {
     freezeTableName: true,
     schema: 'public'
   };
+
   const PqrsModel = sequelize.define("pqrsModel", attributes, options);
+
+  PqrsModel.associate = function (models) {
+    PqrsModel.belongsTo(models.clientesModel, {
+      foreignKey: 'id_clie'
+    });
+  };
+
   return PqrsModel;
 };

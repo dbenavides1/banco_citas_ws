@@ -32,6 +32,14 @@ module.exports = sequelize => {
     freezeTableName: true,
     schema: 'public'
   };
+
   const VentanillasModel = sequelize.define("ventanillasModel", attributes, options);
+
+  VentanillasModel.associate = function (models) {
+    VentanillasModel.hasMany(models.citasModel, {
+      foreignKey: 'id_ventanilla'
+    });
+  };
+
   return VentanillasModel;
 };
