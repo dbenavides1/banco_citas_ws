@@ -13,7 +13,10 @@ var pqrsRouter = require('./routes/pqrs');
 var usuariosRouter = require('./routes/usuarios');
 var ventanillasRouter = require('./routes/ventanillas');
 
+var cors = require('cors');
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
