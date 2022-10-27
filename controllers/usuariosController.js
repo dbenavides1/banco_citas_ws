@@ -43,6 +43,28 @@ module.exports = {
                 res.status(400).send(error));
     },
 
+    getByEmail(req, res) {
+        console.log(req.body.email);
+        return usuarios
+            .findOne({ where: { email: req.body.email } })
+            .then((usuarios) => {
+                console.log(usuarios);
+                if (!usuarios) {
+                    return res.status(404).send({
+                        message: 'Data Not Found',
+                    });
+                }
+                if (String(usuarios.password) != String(req.body.password)) {
+                    return res.status(404).send({
+                        message: 'Datos Incorrectos',
+                    });
+                }
+                return res.status(200).send(usuarios);
+            })
+            .catch((error) =>
+                res.status(400).send(error));
+    },
+
     add(req, res) {
         return usuarios
             .create({

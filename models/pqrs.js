@@ -44,6 +44,15 @@ module.exports = sequelize => {
       field: "estado",
       autoIncrement: false
     },
+    mensaje: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      defaultValue: null,
+      comment: null,
+      primaryKey: false,
+      field: "mensaje",
+      autoIncrement: false
+    },
     fec_reg: {
       type: DataTypes.DATE,
       allowNull: false,

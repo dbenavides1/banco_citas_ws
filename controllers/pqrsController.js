@@ -30,7 +30,8 @@ module.exports = {
             .create({
                 id_clie: req.body.id_clie,
                 tipo: req.body.tipo,
-                estado: req.body.estado
+                estado: req.body.estado,
+                mensaje: req.body.mensaje
             })
             .then((pqrs) => res.status(201).send(pqrs))
             .catch((error) => res.status(400).send(error));
@@ -49,7 +50,8 @@ module.exports = {
                     .update({
                         id_clie: req.body.id_clie || pqrs.id_clie,
                         tipo: req.body.tipo || pqrs.tipo,
-                        estado: req.body.estado || pqrs.estado
+                        estado: req.body.estado || pqrs.estado,
+                        mensaje: req.body.mensaje || pqrs.mensaje
                     })
                     .then(() => res.status(200).send(pqrs))
                     .catch((error) => res.status(400).send(error));

@@ -24,7 +24,8 @@ CREATE TABLE "clientes" (
   "email" varchar(255) NOT NULL,
   "password" varchar(255) NOT NULL,
   "fec_reg" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT "id_clie" PRIMARY KEY ("id_clie")
+  CONSTRAINT "id_clie" PRIMARY KEY ("id_clie"),
+  CONSTRAINT "email_cli" UNIQUE ("email")
 );
 
 CREATE TABLE "pqrs" (
@@ -32,6 +33,7 @@ CREATE TABLE "pqrs" (
   "id_clie" int4 NOT NULL,
   "tipo" varchar(50) NOT NULL,
   "estado" varchar(100) NOT NULL,
+  "mensaje" text NOT NULL,
   "fec_reg" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT "id_pqrs" PRIMARY KEY ("id_pqrs")
 );
@@ -49,9 +51,10 @@ CREATE TABLE "usuarios" (
   "fec_nac" date DEFAULT NULL,
   "email" varchar(255) NOT NULL,
   "password" varchar(255) NOT NULL,
-  "rol" varchar(100),
+  "rol" varchar(100) NOT NULL,
   "fec_reg" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT "id_usu" PRIMARY KEY ("id_usu")
+  CONSTRAINT "id_usu" PRIMARY KEY ("id_usu"),
+  CONSTRAINT "email_usu" UNIQUE ("email")
 );
 
 CREATE TABLE "ventanillas" (

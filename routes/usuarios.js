@@ -3,6 +3,7 @@ var router = express.Router();
 const usuariosController = require('../controllers').usuariosController;
 
 router.get('/', usuariosController.list);
+router.post('/auth', usuariosController.getByEmail);
 router.get('/full', usuariosController.listFull);
 router.get('/:id', usuariosController.getById);
 router.post('/', usuariosController.add);

@@ -101,7 +101,8 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: false,
       field: "email",
-      autoIncrement: false
+      autoIncrement: false,
+      unique: true
     },
     password: {
       type: DataTypes.CHAR(255),
